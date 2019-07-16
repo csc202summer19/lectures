@@ -26,19 +26,16 @@ def dequeue(pqueue):
     """ Remove the highest priority element from a priority queue """
     # Save the root (current index = 1) in a temporary variable.
     # Put the last leaf (index = size) into the root.
-    # While children (left child = current index * 2,
-    #                (right child = current index * 2 + 1) exist, do:
+    # While a child (left child = current index * 2,
+    #               (right child = current index * 2 + 1) exists, do:
     #     If neither child is larger, then:
-    #          Break the loop.
-    #     Else if the right child does not exist and the left child is larger:
-    #          Swap with the left child.
-    #          Set the current index to the left child.
-    #     Else if the right child exists and is larger than both the left
-    #      child and the parent:
+    #          Break the loop -- this could be in the loop condition.
+    #     Else, if the right child exists and is larger than both the left
+    #      child and the current, then:
     #          Swap with the right child.
     #          Set the current index to the right child.
-    #     Else if the right child exists and is smaller than the left, and the
-    #      left is larger than the parent:
+    #     Else (either the right child does not exist or it is smaller than the
+    #      left child, and the left is larger than the parent):
     #          Swap with the left child.
     #          Set the current index to the left child.
     # Decrement the size.
